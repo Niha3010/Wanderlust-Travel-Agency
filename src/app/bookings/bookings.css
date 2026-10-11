@@ -1,0 +1,54 @@
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+h1 {
+  text-align: center;
+  color: grey;
+  margin-bottom: 30px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table th {
+  background-color: lightcyan;
+  color: black;
+}
+
+.table td,
+.table th {
+  padding: 12px;
+}
+
+.table tbody tr:hover {
+  background-color: white;
+}
+
+.text-end {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.text-end h3 {
+  color: darkslategray;
+}
+
+.container > p {
+  text-align: center;
+  margin-top: 30px;
+  color: black;
+}
+
+/* Mobile screen */
+@media (max-width: 576px) {
+  .table td,
+  .table th {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

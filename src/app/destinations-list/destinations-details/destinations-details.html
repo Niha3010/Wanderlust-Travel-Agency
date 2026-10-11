@@ -1,0 +1,24 @@
+<div class="container">
+@if (destination) {
+    <div class="row my-5">
+        <div class="col">
+            <img [src]="'images/' + destination.imageUrl" class="img-fluid w-100" 
+            alt="{{destination.name}}"/>
+        </div>
+        <div class="col">
+     <h1>{{ destination.name }}</h1>
+    <p><strong>Price:</strong> €{{ destination.price }}</p>
+    <p>{{ destination.description }}</p>
+    @if (destination.availability) {
+    <button 
+    class="btn btn-success"
+    (click)="addToBooking()">Add to Trip</button>
+    } @else {
+          <p class="text-danger fw-bold">Fully booked</p>
+        }
+        </div>
+    </div>
+} @else {
+    <h2 class="text-center my-3">Destination Not Found!</h2>
+}
+</div>

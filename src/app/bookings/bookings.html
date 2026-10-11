@@ -1,0 +1,59 @@
+<div class="container my-4">
+  <h1>Your Bookings</h1>
+
+  @if (bookingItems.length > 0) {
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (item of bookingItems; track $index) {
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>€{{ item.price }}</td>
+            <td>
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="removeDestination(item.id)"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    <div class="text-end">
+      <p>Subtotal: €{{ getTotal().toFixed(2) }}</p>
+
+      <p>Service fee (10%): €{{ (getTotal() * 0.10).toFixed(2) }}</p>
+
+      <hr>
+
+      <h4>
+        Total before discount:
+        €{{ (getTotal() * 1.10).toFixed(2) }}
+      </h4>
+
+      @if (getTotal() * 1.10 > 1000) {
+        <p class="text-success">
+          Discount (15%): -€{{ (getTotal() * 1.10 * 0.15).toFixed(2) }}
+        </p>
+
+        <h5>
+          Total Price: €{{ (getTotal() * 1.10 * 0.85).toFixed(2) }}
+        </h5>
+      } @else {
+        <h3>Final Price: €{{ (getTotal() * 1.10).toFixed(2) }}</h3>
+      }
+    </div>
+  } @else {
+    <p>Your booking list is empty!</p>
+  }
+</div>

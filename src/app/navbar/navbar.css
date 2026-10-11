@@ -1,0 +1,11 @@
+.navbar {
+  background-color: darkcyan;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navbar .nav-link:hover {
+  color: lightcoral;
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: whitesmoke;
+}

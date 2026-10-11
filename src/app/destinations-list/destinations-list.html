@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    @for (destination of destinationsArray; track $index) {
+      <div class="col">
+        <div class="card h-100">
+          <img
+            [src]="'images/' + destination.imageUrl"
+            class="card-img-top"
+            [alt]="destination.name"
+            style="height: 220px; object-fit: cover"
+          />
+
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title destination-name">{{ destination.name }}</h5>
+
+            <p class="card-text destination-description">
+              {{ destination.description }}
+            </p>
+
+            <p class="fw-bold mt-auto mb-0">€{{ destination.price }}</p>
+
+            @if (destination.availability) {
+              <div class="d-flex justify-content-between mt-auto pt-3">
+                <a [routerLink]="['/destinations', destination.id]" class="btn btn-outline-primary">
+                  Details
+                </a>
+
+                <button class="btn btn-outline-success" (click)="addToBooking(destination)">
+                  Add to Trip
+                </button>
+              </div>
+            } @else {
+              <p class="text-danger fw-bold mb-0 pt-3">Fully booked</p>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

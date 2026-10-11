@@ -1,0 +1,10 @@
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+}
+
+main {
+  flex: 1;
+}

@@ -1,0 +1,26 @@
+.card {
+  height: 100%;
+}
+
+.destination-description {
+  min-height: 72px;
+}
+
+.card-body {
+  margin-top: auto;
+  font-weight: bold;
+}
+.card-text {
+  font-weight: 200;
+  color: rgb(80, 78, 78);
+}
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+  box-shadow: 0 4px 12px lightslategray;
+}
+.destination-name {
+  color: darkcyan;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
